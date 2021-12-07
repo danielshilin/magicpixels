@@ -1,0 +1,81 @@
+/*general*/
+body {
+    margin: 0;
+    padding: 0;
+    /*font*/
+    font-family: "geomanistregular", sans-serif;
+}
+
+/*headings*/
+h1, h2 {
+    text-decoration: underline;
+}
+
+h2 {
+    font-size: 1.3em;
+}
+
+/*Title*/
+#title>h1 {
+    margin: 0;
+    font-size: 3em;
+    color: white;
+    font-variant: small-caps;
+    text-decoration: none;
+
+}
+#title {
+    text-align: center;
+    border: 0.2em solid black;
+    width: 100%;
+    background-color: black;
+}
+
+/*Images*/
+img {
+    width: 100%;
+    height: auto;
+}
+figure {
+    background-color: black;
+    padding: 5% 5%;
+}
+
+/*nav*/
+nav {
+    text-align: center;
+}
+a {
+    color: black;
+    font-weight: bold;
+    line-height: 1.5em;
+}
+/*about me*/
+dt>a{
+    text-decoration: none;
+}
+
+
+@media (min-width: 20em) {
+    /* smartphones, iPhone, portrait 480x320 phones */
+}
+
+@media (min-width: 30em) {
+    /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */
+}
+
+@media (min-width: 40em) {
+    /* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */
+}
+
+@media (min-width: 60em) {
+    /* tablet, landscape iPad, lo-res laptops ands desktops */
+}
+
+@media (min-width: 64em) {
+    /* big landscape tablets, laptops, and desktops */
+}
+
+@media (min-width: 80em) {
+    /* hi-res laptops and desktops */
+}
