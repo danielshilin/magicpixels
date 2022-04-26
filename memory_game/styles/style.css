@@ -1,0 +1,15 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+img {
+    height: 16.5em;
+    width: 12.5em;
+    padding: 30px;
+    box-sizing: border-box;
+    display: none;
+}
+#btnStart {
+    margin: 10% 43%;
+    height: 2em;
+}
