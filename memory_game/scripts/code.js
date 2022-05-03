@@ -9,7 +9,7 @@ const global = {
 }
 
 const setup = () => {
-    document.getElementById("btnStart").addEventListener("click", startGame);
+    document.getElementById("btnStart").addEventListener("click", startGamePt1);
 }
 
 // Getters
@@ -72,10 +72,29 @@ const setAllImageIds = () => {
 }
 
 // functions
-const startGame = (event) => {
+const loadImages = () => {
+//    <img id="img1" src="images/0.png" alt="card">
+    body = document.querySelector("body");
+    imgId = 1;
+    for (let i = 1; i <= global.CARDS_TYPE_AMOUNT*2; i++) {
+            console.log("imgId="+imgId)
+            image = document.createElement("img");
+            image.setAttribute("src", "images/0.png");
+            image.setAttribute("id", "img"+imgId);
+            image.setAttribute("alt", "card");
+            body.appendChild(image);
+            imgId++;
+    }
+}
+const startGamePt1 = (event) => {
     event.target.style.display = "none";
+    loadImages();
+    setTimeout(startGamePt2, 100);
+
+}
+const startGamePt2 = () => {
     setAllImageIds();
-    displayAllImages();
+    // displayAllImages();
     images = document.getElementsByTagName("img");
     for (let i = 0; i < images.length; i++) {
         images[i].addEventListener("click", actionsAfterClick);
@@ -106,12 +125,12 @@ const actionsAfterClick = (event) => {
     }
 
 }
-const displayAllImages = () => {
-    const images = document.getElementsByTagName("img");
-    for (let i = 0; i < images.length; i++) {
-        images[i].style.display = "unset"
-    }
-}
+// const displayAllImages = () => {
+//     const images = document.getElementsByTagName("img");
+//     for (let i = 0; i < images.length; i++) {
+//         images[i].style.display = "unset"
+//     }
+// }
 const actionsAfterCardsSelected = () => {
     if (cardsAreEqual()) {
         console.log("equal");
