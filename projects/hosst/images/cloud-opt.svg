@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="500"
+   zoomAndPan="magnify"
+   viewBox="0 0 375 275.15235"
+   height="366.86981"
+   preserveAspectRatio="xMidYMid"
+   version="1.2"
+   id="svg1"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs1" />
+  <path
+     style="fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+     d="M 297.09766,93.773443 C 288.87109,40.777347 242.90234,2.7659758e-6 187.5,2.7659758e-6 132.09766,2.7659758e-6 86.128906,40.777347 77.902344,93.773443 33.871094,100.30859 0,138.30078 0,184.03906 c 0,50.21485 40.886719,91.11328 91.089844,91.11328 H 283.91016 c 50.20312,0 91.08984,-40.89843 91.08984,-91.11328 0,-45.73828 -33.87109,-83.73047 -77.90234,-90.265617 z m 0,0"
+     id="path1" />
+</svg>
