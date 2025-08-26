@@ -1,81 +1,174 @@
-/*general*/
+:root {
+    --bg: #ffffff;
+    --fg: #111111;
+    --muted: #666;
+    --card: #f6f6f6;
+    --ring: 34 100% 50%;
+    --maxw: 1200px;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg: #0e0f12;
+        --fg: #f1f1f3;
+        --muted: #a0a3aa;
+        --card: #16181d;
+    }
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+}
+
 body {
     margin: 0;
+    font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji";
+    background: var(--bg);
+    color: var(--fg);
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+}
+
+.wrap {
+    max-width: var(--maxw);
+    margin: 0 auto;
+    padding: 28px clamp(16px, 3vw, 32px) 56px;
+}
+
+header {
+    display: grid;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.brand {
+    font-weight: 700;
+    letter-spacing: 0.2px;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-size: clamp(20px, 2.6vw, 32px);
+}
+
+.brand .dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: hsl(var(--ring));
+    box-shadow: 0 0 0 6px hsl(var(--ring) / 0.15);
+}
+
+.subtitle {
+    color: var(--muted);
+    font-size: 0.98rem;
+    margin-top: 2px;
+}
+
+.grid {
+    display: grid;
+    gap: 16px;
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+}
+
+@media (min-width: 560px) {
+    .grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (min-width: 920px) {
+    .grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+@media (min-width: 1200px) {
+    .grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+}
+
+.card {
+    display: grid;
+    gap: 8px;
+    text-decoration: none;
+    color: inherit;
+    background: var(--card);
+    border-radius: 12px;
+    padding: 8px;
+    transition: transform .08s ease, box-shadow .12s ease;
+    outline: none;
+}
+
+.thumb {
+    border-radius: 8px;
+    overflow: hidden;
+    background: #000;
+    aspect-ratio: 16 / 9;
+    display: grid;
+    place-items: center;
+    position: relative;
+    isolation: isolate;
+}
+
+.thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.caption {
+    display: grid;
+    gap: 4px;
+    padding: 2px 4px 6px;
+}
+
+.title {
+    font-size: 0.98rem;
+    font-weight: 650;
+    line-height: 1.35;
+}
+
+.meta {
+    color: var(--muted);
+    font-size: 0.85rem;
+}
+
+.card:focus-visible {
+    box-shadow: 0 0 0 3px hsl(var(--ring) / 0.6);
+    transform: translateY(-1px);
+}
+
+.card:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 24px rgba(0, 0, 0, .12);
+}
+
+footer {
+    margin-top: 36px;
+    color: var(--muted);
+    font-size: 0.9rem;
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.sr-only {
+    position: absolute !important;
+    width: 1px;
+    height: 1px;
     padding: 0;
-    /*font*/
-    font-family: "geomanistregular", sans-serif;
-}
-
-/*headings*/
-h1, h2 {
-    text-decoration: underline;
-}
-
-h2 {
-    font-size: 1.3em;
-}
-
-/*Title*/
-#title>h1 {
-    margin: 0;
-    font-size: 3em;
-    color: white;
-    font-variant: small-caps;
-    text-decoration: none;
-
-}
-#title {
-    text-align: center;
-    border: 0.2em solid black;
-    width: 100%;
-    background-color: black;
-}
-
-/*Images*/
-img {
-    width: 100%;
-    height: auto;
-}
-figure {
-    background-color: black;
-    padding: 5% 5%;
-}
-
-/*nav*/
-nav {
-    text-align: center;
-}
-a {
-    color: black;
-    font-weight: bold;
-    line-height: 1.5em;
-}
-/*about me*/
-dt>a{
-    text-decoration: none;
-}
-
-
-@media (min-width: 20em) {
-    /* smartphones, iPhone, portrait 480x320 phones */
-}
-
-@media (min-width: 30em) {
-    /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */
-}
-
-@media (min-width: 40em) {
-    /* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */
-}
-
-@media (min-width: 60em) {
-    /* tablet, landscape iPad, lo-res laptops ands desktops */
-}
-
-@media (min-width: 64em) {
-    /* big landscape tablets, laptops, and desktops */
-}
-
-@media (min-width: 80em) {
-    /* hi-res laptops and desktops */
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
 }

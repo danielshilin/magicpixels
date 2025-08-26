@@ -1,28 +1,85 @@
-<!DOCTYPE html>
-<html lang=”en”>
+<!doctype html>
+<html lang="en">
+
 <head>
-    <title>Personal Website</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="styles/bootstrap-grid.css">
-    <!-- Eigen styles -->
-    <link href="styles/style.css" rel="stylesheet"/>
+    <!--
+    Daniel Shilin — Magic Pixels / Portfolio Hub
+    Usage:
+      - Keep images ~1280×720 for crisp 16:9 "YouTube-style" thumbnails.
+  -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Daniel Shilin — Magic Pixels • Portfolio</title>
+    <meta name="description" content="Portfolio hub of projects by Daniel Shilin at Magic Pixels." />
+    <link rel="canonical" href="https://magicpixels.com/" />
+    <meta property="og:title" content="Daniel Shilin — Magic Pixels • Portfolio" />
+    <meta property="og:description" content="A simple grid of projects. Click a thumbnail to explore." />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://placehold.co/1200x630/png?text=Magic+Pixels" />
+    <meta name="theme-color" content="#0d0d0d" />
+
+    <link rel="stylesheet" href="styles/style.css">
 </head>
+
 <body>
+    <div class="wrap">
+        <header>
+            <h1 class="brand" aria-label="Daniel Shilin — Magic Pixels">
+                <span class="dot" aria-hidden="true"></span>
+                Daniel Shilin — Magic Pixels
+            </h1>
+            <p class="subtitle">A simple hub for my projects. Click a thumbnail to see the project in detail.</p>
+        </header>
 
-<header id="title"><h1>David Davidson</h1></header>
-<nav>
-    <a href="index.html">Home</a>
-    <a href="1/about_me.html">About me</a>
-    <a href="memory_game/index.html">Memory Game</a>
-    <a href="1/contact_me.html">Contact me</a>
-</nav>
-<div class="container">
-    <figure>
-        <img src="images/pexels-luiz-felipe-rodrigues-de-oliveira-7475926.gif" height="3456"
-             width="2304" alt="Picture of David"/>
-    </figure>
-</div>
+        <!-- PROJECTS GRID -->
+        <section class="grid" aria-label="Projects">
+            <!-- TEMPLATE: duplicate this block and customize -->
+            <a class="card" href="https://example.com/project-1" target="_blank" rel="noopener noreferrer">
+                <div class="thumb" aria-hidden="true">
+                    <img src="https://placehold.co/1280x720/000000/FFFFFF/png?text=Project+1+Thumbnail"
+                        alt="Project 1 thumbnail" loading="lazy" />
+                </div>
+                <div class="caption">
+                    <div class="title">Project One Title</div>
+                    <div class="meta">Short one-liner about what it is.</div>
+                </div>
+            </a>
 
+            <a class="card" href="https://example.com/project-2" target="_blank" rel="noopener noreferrer">
+                <div class="thumb" aria-hidden="true">
+                    <img src="https://placehold.co/1280x720/111827/FFFFFF/png?text=Project+2+Thumbnail"
+                        alt="Project 2 thumbnail" loading="lazy" />
+                </div>
+                <div class="caption">
+                    <div class="title">Project Two Title</div>
+                    <div class="meta">Another concise description.</div>
+                </div>
+            </a>
+
+            <a class="card" href="https://example.com/project-3" target="_blank" rel="noopener noreferrer">
+                <div class="thumb" aria-hidden="true">
+                    <img src="https://placehold.co/1280x720/1f2937/FFFFFF/png?text=Project+3+Thumbnail"
+                        alt="Project 3 thumbnail" loading="lazy" />
+                </div>
+                <div class="caption">
+                    <div class="title">Project Three Title</div>
+                    <div class="meta">Tagline or tech stack.</div>
+                </div>
+            </a>
+
+            <!-- add more cards below as needed -->
+        </section>
+
+        <footer>
+            <span>© <span id="y"></span> Magic Pixels</span>
+            <span><a href="mailto:magicpixels.pro@gmail.com" style="color:inherit">Contact</a></span>
+        </footer>
+    </div>
+
+    <script>
+        // tiny util: keep copyright year current
+        document.getElementById('y').textContent = new Date().getFullYear();
+    </script>
 </body>
+
 </html>
