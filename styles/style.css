@@ -1,19 +1,10 @@
 :root {
-    --bg: #ffffff;
-    --fg: #111111;
-    --muted: #666;
-    --card: #f6f6f6;
-    --ring: 34 100% 50%;
+    --bg: #111111;
+    --fg: #f1f1f3;
+    --muted: #a0a3aa;
+    --card: hsla(0, 0%, 55%, 0.25);
+    --ring: 89.44 64.66% 51.18%;
     --maxw: 1200px;
-}
-
-@media (prefers-color-scheme: dark) {
-    :root {
-        --bg: #0e0f12;
-        --fg: #f1f1f3;
-        --muted: #a0a3aa;
-        --card: #16181d;
-    }
 }
 
 * {
