@@ -87,7 +87,8 @@ const loadImages = () => {
     }
 }
 const startGamePt1 = (event) => {
-    event.target.style.display = "none";
+    document.querySelector(".menu-container").remove(); // removes menu cleanly
+    document.body.classList.add("in-game");
     loadImages();
     setTimeout(startGamePt2, 100);
 
