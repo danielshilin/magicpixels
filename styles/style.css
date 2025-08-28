@@ -163,3 +163,57 @@ footer {
     white-space: nowrap;
     border: 0;
 }
+
+/* Lightbox */
+.lightbox {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, .9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity .2s ease;
+    z-index: 1000;
+}
+
+.lightbox.active {
+    visibility: visible;
+    opacity: 1;
+}
+
+.lightbox img {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 6px;
+}
+
+.lightbox button {
+    position: absolute;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+    padding: 8px 12px;
+}
+
+/* X button stays top right */
+.close-btn {
+    top: 20px;
+    right: 20px;
+}
+
+/* Arrows are vertically centered */
+.prev-btn {
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.next-btn {
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+}

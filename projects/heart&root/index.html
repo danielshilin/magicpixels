@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Magic Pixels — Hosst</title>
+    <meta name="description" content="Graphic design gallery by Daniel Shilin — Magic Pixels." />
+    <link rel="stylesheet" href="../../styles/style.css">
+</head>
+
+<body>
+    <div class="wrap">
+        <header>
+            <h1 class="brand" aria-label="Magic Pixels — Hosst">
+                <span class="dot" aria-hidden="true"></span>
+                Magic Pixels — Hosst
+            </h1>
+            <p class="subtitle">My design of a brand and logo for Heart & Root, a solo herbalist that puts her heart
+                into growing healing plants. </p>
+        </header>
+
+        <!-- GALLERY GRID -->
+        <section class="grid" id="gallery">
+            <!-- Duplicate cards as needed -->
+            <div class="card" data-full="https://placehold.co/720x1280/000000/FFFFFF/png?text=Graphic+1">
+                <div class="thumb">
+                    <img src="https://placehold.co/400x225/000000/FFFFFF/png?text=Graphic+1" alt="Graphic project 1">
+                </div>
+                <div class="caption">
+                    <div class="title">Graphic Project 1</div>
+                </div>
+            </div>
+
+            <div class="card" data-full="https://placehold.co/1280x720/111827/FFFFFF/png?text=Graphic+2">
+                <div class="thumb">
+                    <img src="https://placehold.co/400x225/111827/FFFFFF/png?text=Graphic+2" alt="Graphic project 2">
+                </div>
+                <div class="caption">
+                    <div class="title">Graphic Project 2</div>
+                </div>
+            </div>
+
+            <div class="card" data-full="https://placehold.co/1280x720/1f2937/FFFFFF/png?text=Graphic+3">
+                <div class="thumb">
+                    <img src="https://placehold.co/400x225/1f2937/FFFFFF/png?text=Graphic+3" alt="Graphic project 3">
+                </div>
+                <div class="caption">
+                    <div class="title">Graphic Project 3</div>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <span>© <span id="y"></span> Magic Pixels</span>
+            <span><a href="mailto:magicpixels.pro@gmail.com" style="color:inherit">magicpixels.pro@gmail.com</a></span>
+        </footer>
+    </div>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox">
+        <button class="close-btn" aria-label="Close">&times;</button>
+        <button class="prev-btn" aria-label="Previous">&#10094;</button>
+        <img src="" alt="">
+        <button class="next-btn" aria-label="Next">&#10095;</button>
+    </div>
+
+    <script>
+        const cards = document.querySelectorAll('.card');
+        const lightbox = document.getElementById('lightbox');
+        const img = lightbox.querySelector('img');
+        const closeBtn = lightbox.querySelector('.close-btn');
+        const prevBtn = lightbox.querySelector('.prev-btn');
+        const nextBtn = lightbox.querySelector('.next-btn');
+
+        let currentIndex = 0;
+
+        function showImage(index) {
+            const full = cards[index].getAttribute('data-full');
+            const alt = cards[index].querySelector('img').alt;
+            img.src = full;
+            img.alt = alt;
+            currentIndex = index;
+            lightbox.classList.add('active');
+        }
+
+        cards.forEach((card, i) => {
+            card.addEventListener('click', () => showImage(i));
+        });
+
+        closeBtn.addEventListener('click', () => {
+            lightbox.classList.remove('active');
+        });
+
+        prevBtn.addEventListener('click', () => {
+            showImage((currentIndex - 1 + cards.length) % cards.length);
+        });
+
+        nextBtn.addEventListener('click', () => {
+            showImage((currentIndex + 1) % cards.length);
+        });
+
+        // close on background click
+        lightbox.addEventListener('click', e => {
+            if (e.target === lightbox) lightbox.classList.remove('active');
+        });
+
+        // keyboard controls
+        document.addEventListener('keydown', e => {
+            if (!lightbox.classList.contains('active')) return;
+            if (e.key === 'Escape') lightbox.classList.remove('active');
+            if (e.key === 'ArrowLeft') prevBtn.click();
+            if (e.key === 'ArrowRight') nextBtn.click();
+        });
+
+        // update year
+        document.getElementById('y').textContent = new Date().getFullYear();
+    </script>
+</body>
+
+</html>
