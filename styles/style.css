@@ -32,6 +32,10 @@ body {
     padding: 28px clamp(16px, 3vw, 32px) 56px;
 }
 
+a {
+    color: inherit;
+}
+
 header {
     display: grid;
     gap: 8px;
