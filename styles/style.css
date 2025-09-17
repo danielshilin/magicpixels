@@ -271,7 +271,7 @@ footer {
 }
 
 .nav__item>a {
-    color: var(--color-body);
+    color: var(--fg);
     transition: color 0.25s;
 }
 
@@ -288,10 +288,6 @@ footer {
 nav.collapsible--expanded .nav__toggler {
     box-shadow: 0 0 0 3px hsla(255, 15%, 84%, 0.35);
     border-radius: 5px;
-}
-
-.nav__toggler:hover {
-    fill: white;
 }
 
 @media screen and (min-width: 65rem) {
@@ -324,4 +320,24 @@ nav.collapsible--expanded .nav__toggler {
 .list {
     list-style: none;
     padding-left: 0;
+}
+
+/* icon */
+.icon {
+    width: 40px;
+    height: 40px;
+}
+
+/* Collapsibles */
+
+.collapsible__content {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: all 0.3s;
+}
+
+.collapsible--expanded .collapsible__content {
+    max-height: 100vh;
+    opacity: 1;
 }

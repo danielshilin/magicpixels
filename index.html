@@ -28,9 +28,7 @@
             <img src="images/logo.svg" alt="hosst logo cloud" class="logo">
             <img src="images/Magic Pixels-text.svg" alt="hosst logo text" class="logo">
         </a>
-        <svg class="icon nav__toggler">
-            <use xlink:href="images/sprite.svg#menu"></use>
-        </svg>
+        <img class="icon nav__toggler icon-menu" src="images/menu-svgrepo-com.svg" alt="menu icon">
         <ul class="list nav__list collapsible__content">
             <li class="nav__item"><a href="/index.html#services">Diensten</a></li>
             <li class="nav__item"><a href="/index.html#projects">Projecten</a></li>
@@ -113,15 +111,12 @@
     </main>
 
     <footer>
-        <span>© <span id="y"></span> Magic Pixels</span>
+        <span>© <span id="year"></span> Magic Pixels</span>
         <span><a href="mailto:daniel@magicpixels.pro">daniel@magicpixels.pro</a></span>
     </footer>
 
 
-    <script>
-        // tiny util: keep copyright year current
-        document.getElementById('y').textContent = new Date().getFullYear();
-    </script>
+    <script src="js/main.js"></script>
 </body>
 
 </html>
