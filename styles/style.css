@@ -288,6 +288,12 @@ footer {
     display: inline-flex;
 }
 
+@media screen and (min-width: 65rem) {
+    .logo-container {
+        width: 30%;
+    }
+}
+
 .nav__list {
     width: 100%;
     margin: 0;
